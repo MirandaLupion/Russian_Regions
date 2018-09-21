@@ -4,6 +4,7 @@ library(tidyverse)
 library(dplyr)
 RegionsData3 <- da35355.0003
 
+#Makes the ID a factor
 RegionsData3$ID <- as.factor(as.character(RegionsData3$ID)) 
 
 RegionsData3 %>%
@@ -14,7 +15,8 @@ RegionsData3 %>%
 
 
 RegionsData7 <-da35355.0007
-RegionsData7$ID <- as.factor(as.character(RegionsData3$ID)) 
+RegionsData7$ID <- as.factor(as.character(RegionsData3$ID)) #Makes the ID a factor
+
 select(RegionsData7, NAME, SICKRATE15, YEAR) %>%
   filter(YEAR == 2010) %>%
   arrange(desc(SICKRATE15))
